@@ -4,39 +4,50 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Eventoria Certificate Generator</title>
+		<style>
+			.required:after {
+				content:" *";
+				color: red;
+			}
+		</style>
 	</head>
 	<body>
 		<h1>Eventoria Certificate Generator</h1>
 			<div>
-				<label for="fname">First Name:</label>
+				<label class="required" for="fname">First Name:</label>
 				<input type="text" name="fName" id="fname" required />
-				<label for="lname">Last Name:</label>
+				<br /><br />
+				<label class="required" for="lname">Last Name:</label>
 				<input type="text" name="lName" id="lname" required />
 				<br /><br />
-				<label for="certtype">Select Certificate Type:</label>
+				<label class="required" for="certtype">Select Certificate Type:</label>
 				<select name="certtype" id="certtype">
 					<option value="Participation">Participation</option>
 					<option value="Winner">Winner</option>
 				</select>
 				<br /><br />
-				<label for="ename">Event Name:</label>
+				<label class="required" for="ename">Event Name:</label>
 				<input type="text" name="ename" id="ename" required />
 				<br /><br />
-				<label for="oname">Name of the Organization:</label>
+				<label class="required" for="oname">Name of the Organization:</label>
 				<input type="text" name="oname" id="oname" required />
 				<br /><br />
-				<label for="edate">Event date:</label>
+				<label class="required" for="edate">Event date:</label>
 				<input type="date" name="edate" id="edate" required />
 				<br /><br />
-				<label for="hname">Name of the Event Host:</label>
+				<label class="required" for="hname">Name of the Event Host:</label>
 				<input type="text" name="hname" id="hname" required />
 				<br /><br />
-				<label for="hpos">Position of the Event Host:</label>
+				<label class="required" for="hpos">Position of the Event Host:</label>
 				<input type="text" name="hpos" id="hpos" required />
 				<br /><br />
-				<label for="ologo">Logo of the Organization:</label>
-				<input type="file" name="ologo" accept=".png, .jpg, .jpeg" id="ologo" />
+				<label class="required" for="ologo">Logo of the Organization:</label>
+				<input type="file" name="ologo" accept=".png, .jpg, .jpeg" id="ologo" required />
 				<br /><br />
+				<label class="required" for="hsign">Sign of the Host:</label>
+				<input type="file" name="hsign" accept=".png, .jpg, .jpeg" id="hsign" required />
+				<br />
+				<p><strong>Note:</strong> All fields marked with <span style="color: red;">*</span> are required.</p>
 				<input type="submit" id="submit" value="Get Certificate"/>
 			</div>
 		<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
